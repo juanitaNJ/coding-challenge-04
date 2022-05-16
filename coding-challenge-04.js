@@ -13,9 +13,10 @@
 // console.log(LongestWord("This is a coding test"));
 
 function LongestWord(sen) {
-    let str = sen.split(" ");
+    let str = sen.replace(/[^a-zA-Z0-9 ]/g, '').split(" ");
     let longestWord = 0;
     let word = null;
+    
     str.forEach(function(str) {
         if (longestWord < str.length) {
             longestWord = str.length;
@@ -25,4 +26,4 @@ function LongestWord(sen) {
     return word;
 }
 
-console.log(LongestWord("This is a coding test"));
+console.log(LongestWord("This is a coding test!&$%$%"));
